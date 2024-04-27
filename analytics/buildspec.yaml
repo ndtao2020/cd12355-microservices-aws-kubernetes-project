@@ -8,6 +8,7 @@ phases:
   build:
     commands:
       - echo Building Docker image...
+      - cd analytics
       - docker build -t coworking .
       - docker tag coworking:latest 055656678958.dkr.ecr.us-east-1.amazonaws.com/coworking:$CODEBUILD_BUILD_NUMBER
   post_build:
